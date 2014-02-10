@@ -67,8 +67,11 @@ $.widget( "ui.checkboxradio", {
 		this.element.closest( "form" )
 			.unbind( "reset" + "." + this.widgetName )
 			.bind( "reset" + "."+ this.widgetName, formResetHandler );
+
 		if ( typeof this.options.disabled === "boolean" ) {
 			this.element.prop( "disabled", this.options.disabled );
+		} else {
+			this.options.disabled = !!this.element.prop( "disabled" );
 		}
 
 		this._getType();
