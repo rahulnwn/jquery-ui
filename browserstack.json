@@ -1,0 +1,12 @@
+{
+  "test_path": [
+    "tests/unit/accordion/accordion.html",
+    "tests/unit/autocomplete/autocomplete.html"
+  ],
+  "timeout": 200,
+  "build": "RahuljqueryUi",
+  "browsers": [
+    "chrome_current",
+    "chrome_previous"
+  ]
+}

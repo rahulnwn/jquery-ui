@@ -104,6 +104,7 @@ uiFiles.forEach(function( file ) {
 require( "load-grunt-tasks" )( grunt );
 // local testswarm and build tasks
 grunt.loadTasks( "build/tasks" );
+grunt.loadNpmTasks("browserstack-runner");
 
 function stripDirectory( file ) {
 	return file.replace( /.+\/(.+?)>?$/, "$1" );
@@ -240,7 +241,7 @@ grunt.initConfig({
 
 grunt.registerTask( "default", [ "lint", "test" ]);
 grunt.registerTask( "lint", [ "asciilint", "jshint", "jscs", "csslint", "htmllint" ]);
-grunt.registerTask( "test", [ "qunit" ]);
+grunt.registerTask( "test", [ "qunit", "browserstack_runner" ]);
 grunt.registerTask( "sizer", [ "concat:ui", "uglify:main", "compare_size:all" ]);
 grunt.registerTask( "sizer_all", [ "concat:ui", "uglify", "compare_size" ]);
 
